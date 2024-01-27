@@ -1,0 +1,65 @@
+#title {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 3em;
+    text-align: center;
+    color: darkgreen;
+
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    place-content: center;
+
+
+
+}
+
+/* canvas {
+    height: 600px;
+    width: 500px;
+
+
+
+} */
+
+#start-button {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+#game-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    background-color: blue;
+
+}
+
+#endTitle {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 2em;
+    text-align: center;
+    color: darkgreen;
+    flex-wrap: wrap;
+}
+
+#restar-button {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#game-end {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+}
