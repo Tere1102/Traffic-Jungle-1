@@ -1,13 +1,13 @@
+
 // 1 Inicializar el canvas
 
 const canvas = document.querySelector('canvas')
 const context = canvas.getContext('2d')
 
 const blockSize = 20
-
 const canvasSize = {
-    canvasWidth: 500,
-    canvasHeight: 600
+    canvasWidth: 30,
+    canvasHeight: 26
 }
 context.scale(blockSize, blockSize)
 
@@ -42,12 +42,24 @@ const board = [
     [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
 ]
 
-
-// 2. game loop
-function update() {
-    draw()
-    requestAnimationFrame(update)
+//Cars
+const verticalCar = {
+    position: { x: 14, y: 23 },
+    shape: [
+        [1, 1],
+        [1, 1],
+        [1, 1]
+    ]
 }
+const horizontalCar = {
+    position: { x: 7, y: 7 },
+    shape: [
+        [1, 1, 1],
+        [1, 1, 1]
+    ]
+
+}
+
 
 function draw() {
     context.fillStyle = '#808080'
@@ -61,6 +73,33 @@ function draw() {
             }
         })
     })
+
+    verticalCar.shape.forEach((row, y) => {
+        row.forEach((value, x) => {
+            if (value) {
+                context.fillStyle = 'yellow'
+                context.fillRect(x + verticalCar.position.x, y + verticalCar.position.y, 1, 1)
+            }
+        })
+    })
+    horizontalCar.shape.forEach((row, y) => {
+        row.forEach((value, x) => {
+            if (value) {
+                context.fillStyle = 'yellow'
+                context.fillRect(x + horizontalCar.position.x, y + horizontalCar.position.y, 1, 1)
+            }
+        })
+    })
 }
+
+// 2. game loop
+function update() {
+    draw()
+    requestAnimationFrame(update)
+}
+
+
+
+
 
 update()
